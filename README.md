@@ -20,4 +20,10 @@ For more information you can visit upstream project : https://www.agora-project.
 
 # How to use this image
 
+Agora need a mysql database :
 
+```docker run -d --name agora-mysql -e MYSQL_ROOT_PASSWORD=password mysql```
+
+Finally launch agora container linked to mysql :
+
+```docker run -d -P --name agora --link agora-mysql:mysql cquad/agora```
